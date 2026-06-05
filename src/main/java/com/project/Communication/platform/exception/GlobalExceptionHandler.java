@@ -28,6 +28,11 @@ public class GlobalExceptionHandler {
         return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
     }
 
+    @ExceptionHandler(CommunityNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleCommunityNotFound(CommunityNotFoundException ex) {
+        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationErrors(MethodArgumentNotValidException ex) {
         Map<String, String> fieldErrors = new HashMap<>();
