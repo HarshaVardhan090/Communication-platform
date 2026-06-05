@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface ChannelRepository extends JpaRepository<Channel, Long> {
 
     List<Channel> findByCommunityId(Long communityId);
+
+    List<Channel> findByNameContainingIgnoreCase(String keyword);
 }

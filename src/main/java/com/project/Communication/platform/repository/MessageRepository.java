@@ -13,4 +13,6 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
     List<Message> findByReceiverId(Long receiverId);
 
     List<Message> findByChannelId(Long channelId);
+
+    List<Message> findByContentContainingIgnoreCase(String keyword);
 }

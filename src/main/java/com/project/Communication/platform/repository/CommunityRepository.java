@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface CommunityRepository extends JpaRepository<Community, Long> {
 
     List<Community> findByCreatedBy(Long createdBy);
+
+    List<Community> findByNameContainingIgnoreCase(String keyword);
 }
