@@ -1,4 +1,4 @@
-package com.project.communication.platform;
+package com.project.Communication.platform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
