@@ -152,11 +152,11 @@ root/
 * **IDE:** IntelliJ IDEA
 
 ### 🚀 Steps to Run
-1. **Create Database:** Open MySQL Workbench and create a new schema named `omnisecure_db`.
-2. **Open Project:** Launch IntelliJ IDEA, click **Open**, and select your project's root folder (or `pom.xml` file).
+1. **Create Database:** Open MySQL Workbench and create a new database named `communicationdb`.
+2. **Open Project:** Launch IntelliJ IDEA, click **Open**, and select the project
 3. **Configure Application Properties:** Open `src/main/resources/application.properties` inside IntelliJ and update your database credentials:
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/omnisecure_db
+   spring.datasource.url=jdbc:mysql://localhost:3306/communicationdb
    spring.datasource.username=your_mysql_username
    spring.datasource.password=your_mysql_password
    ```
@@ -165,7 +165,8 @@ root/
 
 
 ## 🚀 Future Enhancements
-* Spring Security
-* Web Sockets
-* Flexible Storage
+* Spring Security & JWT
+* Web Sockets Integration
+* Flexible Storage with both Cloud and Local Storage
 * End to End Encryption
+* AI-Driven Intelligent Collaboration
