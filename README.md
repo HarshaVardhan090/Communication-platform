@@ -38,15 +38,42 @@ Due to limited time and resources, we focused on implementing the core architect
 
 ---
 
-## ✨ Features & Core Functionality
-* **Intelligent Collaboration:** Context-aware smart threading, automated meeting summaries, and AI-assisted task delegation.
-* **Enhanced Privacy:** Client-side encryption, self-sovereign identity verification, and decentralized metadata protection.
-* **Real-Time Fabric:** Ultra-low latency secure audio/video channels and collaborative workspaces.
+## 📂 Project Directory Structure
 
+The backend is architected using a standard Spring Boot layered design. It cleanly decouples network entry points (Controllers), business intelligence logic (Services), and database abstractions (Repositories).
+
+```text
+root/
+├── .mvn/                     
+├── .gitattributes                   
+├── .gitignore                        
+├── mvnw                             
+├── mvnw.cmd                   
+├── pom.xml                          
+└── src/                            
+    ├── main/                         
+    │   ├── java/com/project/CommunicationPlatform/ 
+    │   │   ├── Controller/           # REST APIs (Network Routing Entry Points)
+    │   │   ├── Service/              # Core Intelligence & Business Logi
+    │   │   ├── Entity/               # JPA Database Domain Models (Data Layer)
+    │   │   ├── dto/                  # Data Transfer Objects (Request/Response validation)
+    │   │   ├── repository/           # Database Query Layers (Spring Data JPA)
+    │   │   ├── exception/            # Global Exception & Fault Handling
+    │   │   └── CommunicationPlatformApplication.java # Spring Boot main startup class
+    │   │
+    │   └── resources/                # Application assets & configuration files
+    │       └── application.properties # Server port, database URL, and security flags
+```
+
+### 🧩 Architectural Layer Breakdown
+
+*   **`Controller` Layer:** Operates as your system entry point. These classes manage HTTP requests and endpoints without knowing *how* the underlying logic computes.
+*   **`Service` Layer:** The operational brain. This layer coordinates your **intelligent collaboration tools** and invokes the privacy scripts before passing anything to storage.
+*   **`Entity` & `Repository` Layers:** The persistent database foundation. Entities structure your schemas securely, while Repositories perform safe database read/write queries.
 ---
 
 ## 🚀 Future Enhancements
-* **Decentralized Storage Integration:** Implement IPFS or blockchain-based file systems for true peer-to-peer file permanence.
-* **Offline Mesh Networking:** Enable peer-to-peer secure local communication when internet connectivity is completely lost.
-* **Zero-Knowledge Multi-Party Computation (MPC):** Allow collective AI analysis on encrypted group data without ever decrypting it on a server.
-* **Cross-Platform Mobile Apps:** Deploy dedicated iOS and Android applications built natively with enhanced hardware privacy toggles.
+* Spring Security
+* Web Sockets
+* Flexible Storage
+* End to End Encryption
